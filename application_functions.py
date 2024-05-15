@@ -35,6 +35,16 @@ def habits_list(file_name):
                 print(row [0])
     except FileNotFoundError:
         print("The habits list does not exist")
-        
-def remove_habit():
-    print("Remove habit")
+
+def remove_habit(file_name):
+    good_habit, bad_habit = input("Enter which habit you would like to remove: ")
+    current_list = []
+    with open(file_name, "r", newline='') as f:
+        reader = csv.reader(f)
+        for row in reader:
+            if (good_habit, bad_habit != row[0]):
+                good_habit.append(row)
+                bad_habit.append(row)
+    with open(file_name, "w", newline='') as f:
+        writer = csv.writer(f)
+        writer.writerows(current_list)
