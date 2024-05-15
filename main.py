@@ -2,13 +2,13 @@
 import os.path
 
 # External packages
-# from colored import Fore, Back, Style
+from colored import Fore, Back, Style
 
 
 # Imports of created functions
 
 from application_functions import add_good, add_bad, check_points, habits_list, remove_habit
-print("Welcome to the good habits tracker application")
+print(f"{Fore.blue}Welcome to the good habits tracker application!{Style.reset}")
 
 def create_menu():
 
@@ -19,7 +19,7 @@ def create_menu():
     print("5. Enter 5 to Remove a habit")
     print("6. Enter 6 to exit")
 
-    user_choice = input("Enter your selection: ")
+    user_choice = input(f"{Fore.blue}Enter your selection: {Style.reset}")
     return user_choice
 
 file_name = "list.csv"
@@ -58,4 +58,4 @@ while choice != "6":
 
 
 
-print("Thankyou for using the good habits tracker application!")
+print(f"{Fore.red}Thankyou for using the good habits tracker application!{Style.reset}")

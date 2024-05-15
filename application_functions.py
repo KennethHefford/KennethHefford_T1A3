@@ -1,9 +1,9 @@
 import csv
-
+from colored import Fore, Back, Style
 
 def add_good(file_name):
     print("Add Good Habit")
-    good_name = input("Enter a Good Habit: ")
+    good_name = input(f"{Fore.blue}Enter a Good Habit: {Style.reset}")
     with open(file_name, "a", newline='') as f:
         writer = csv.writer(f)
         writer.writerow([good_name, 1])
@@ -11,13 +11,13 @@ def add_good(file_name):
 
 def add_bad(file_name):
     print("Add Bad Habit")
-    bad_name = input("Enter a Bad Habit: ")
+    bad_name = input(f"{Fore.red}Enter a Bad Habit: {Style.reset}")
     with open(file_name, "a", newline='') as f:
         writer = csv.writer(f)
         writer.writerow([bad_name, -1])
 
 def check_points(file_name):
-    print("Check points total")
+    print(f"{Fore.green}Check points total{Style.reset}")
     with open(file_name, "r", newline='') as f:
         reader = csv.reader(f)
         reader.__next__()
@@ -27,14 +27,14 @@ def check_points(file_name):
 
 def habits_list(file_name):
     try:
-        print("Check habits for today")
+        print(f"{Fore.green}Check habits for today {Style.reset}")
         with open(file_name, "r", newline='') as f:
             reader = csv.reader(f)
             reader.__next__()
             for row in reader:
                 print(row [0])
     except FileNotFoundError:
-        print("The habits list does not exist")
+        print(f"{Fore.red}The habits list does not exist{Style.reset}")
 
 def remove_habit(file_name):
     good_habit, bad_habit = input("Enter which habit you would like to remove: ")
