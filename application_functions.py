@@ -41,10 +41,15 @@ def remove_habit(file_name):
     current_list = []
     with open(file_name, "r", newline='') as f:
         reader = csv.reader(f)
+        existing_habit = False
         for row in reader:
             if (good_habit, bad_habit != row[0]):
                 good_habit.append(row)
                 bad_habit.append(row)
+            else:
+                existing_habit = True
+    if not existing_habit:
+        print("Habit has not been added.")
     with open(file_name, "w", newline='') as f:
         writer = csv.writer(f)
         writer.writerows(current_list)
