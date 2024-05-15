@@ -49,7 +49,7 @@ def remove_habit(file_name):
             else:
                 existing_habit = True
     if not existing_habit:
-        print("Habit has not been added.")
+        print("Habit has not been added already.")
     with open(file_name, "w", newline='') as f:
         writer = csv.writer(f)
         writer.writerows(current_list)
