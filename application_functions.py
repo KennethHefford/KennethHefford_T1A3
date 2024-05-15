@@ -8,7 +8,6 @@ def add_good(file_name):
         writer = csv.writer(f)
         writer.writerow([good_name, 1])
 
-   
 
 def add_bad(file_name):
     print("Add Bad Habit")
@@ -17,16 +16,25 @@ def add_bad(file_name):
         writer = csv.writer(f)
         writer.writerow([bad_name, -1])
 
-def check_points():
+def check_points(file_name):
     print("Check points total")
-
-def habits_list(file_name):
-    print("Check habits tracked")
     with open(file_name, "r", newline='') as f:
         reader = csv.reader(f)
         reader.__next__()
         for row in reader:
-            print(row)
+            total_points = (sum([1]))
+            print(total_points)
 
+def habits_list(file_name):
+    try:
+        print("Check habits for today")
+        with open(file_name, "r", newline='') as f:
+            reader = csv.reader(f)
+            reader.__next__()
+            for row in reader:
+                print(row [0])
+    except FileNotFoundError:
+        print("The habits list does not exist")
+        
 def remove_habit():
     print("Remove habit")
