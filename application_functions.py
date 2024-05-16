@@ -41,7 +41,7 @@ def habits_list(file_name):
         print(f"{Fore.red}The habits list does not exist{Style.reset}")
 
 def remove_habit(file_name):
-    habit_name = input("Enter which Habit you would like to remove: ")
+    habit_name = input(f"{Fore.green}Enter which Habit you would like to remove: {Style.reset}")
     current_list = []
     with open(file_name, "r", newline='') as f:
         reader = csv.reader(f)
@@ -52,7 +52,7 @@ def remove_habit(file_name):
             else:
                 existing_habit = True
     if not existing_habit:
-        print("Habit has not been added yet.")
+        print(f"{Fore.red}Habit has not been added yet."{Style.reset})
     with open(file_name, "w", newline='') as f:
         writer = csv.writer(f)
         writer.writerows(current_list)
