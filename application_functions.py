@@ -17,13 +17,16 @@ def add_bad(file_name):
         writer.writerow([bad_name, -1])
 
 def check_points(file_name):
-    print(f"{Fore.green}Check points total{Style.reset}")
-    with open(file_name, "r", newline='') as f:
-        reader = csv.reader(f)
-        reader.__next__()
-        total_points = 0
-        for row in reader:
-            total_points = total_points + int(row[-1])
+    try:
+        print(f"{Fore.green}Check points total{Style.reset}")
+        with open(file_name, "r", newline='') as f:
+            reader = csv.reader(f)
+            reader.__next__()
+            total_points = 0
+            for row in reader:
+                total_points = total_points + int(row[-1])
+    except FileNotFoundError:
+        print(print(f"{Fore.red}The habits list does not exist{Style.reset}"))
     print(total_points)
 
 def habits_list(file_name):
@@ -38,18 +41,18 @@ def habits_list(file_name):
         print(f"{Fore.red}The habits list does not exist{Style.reset}")
 
 def remove_habit(file_name):
-    habit_name = input("Enter which habit you would like to remove: ")
+    habit_name = input("Enter which Habit you would like to remove: ")
     current_list = []
     with open(file_name, "r", newline='') as f:
         reader = csv.reader(f)
-        habit_name = False
+        existing_habit = False
         for row in reader:
-            if (habit_name!= row):
-                habit_name.append(row)
+            if (habit_name!= row[0]):
+                current_list.append(row)
             else:
-                habit_name = True
-    if not habit_name:
-        print("Habit has not been added already.")
+                existing_habit = True
+    if not existing_habit:
+        print("Habit has not been added yet.")
     with open(file_name, "w", newline='') as f:
         writer = csv.writer(f)
         writer.writerows(current_list)
