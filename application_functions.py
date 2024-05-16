@@ -21,9 +21,10 @@ def check_points(file_name):
     with open(file_name, "r", newline='') as f:
         reader = csv.reader(f)
         reader.__next__()
+        total_points = 0
         for row in reader:
-            total_points = (sum([1]))
-            print(total_points)
+            total_points = total_points + int(row[-1])
+    print(total_points)
 
 def habits_list(file_name):
     try:
@@ -37,18 +38,17 @@ def habits_list(file_name):
         print(f"{Fore.red}The habits list does not exist{Style.reset}")
 
 def remove_habit(file_name):
-    good_habit, bad_habit = input("Enter which habit you would like to remove: ")
+    habit_name = input("Enter which habit you would like to remove: ")
     current_list = []
     with open(file_name, "r", newline='') as f:
         reader = csv.reader(f)
-        existing_habit = False
+        habit_name = False
         for row in reader:
-            if (good_habit, bad_habit != row[0]):
-                good_habit.append(row)
-                bad_habit.append(row)
+            if (habit_name!= row):
+                habit_name.append(row)
             else:
-                existing_habit = True
-    if not existing_habit:
+                habit_name = True
+    if not habit_name:
         print("Habit has not been added already.")
     with open(file_name, "w", newline='') as f:
         writer = csv.writer(f)
