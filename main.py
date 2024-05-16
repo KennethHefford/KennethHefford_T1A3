@@ -53,7 +53,7 @@ while choice != "6":
     elif (choice == "6"):
         print("You entered 6.")
     else:
-        print("Please enter from the options available 1-6.")
+        print(f"{Fore.red}Please enter from the options available 1-6.{Style.reset}")
 
 
 
