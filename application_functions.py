@@ -19,7 +19,7 @@ def add_bad(file_name):
 
 def check_points(file_name):
     try:
-        print(f"{Fore.green}Check points total{Style.reset}")
+        print(emoji.emojize(f"{Fore.green}Check points total :smiling_face_with_open_hands:{Style.reset}", language='alias'))
         with open(file_name, "r", newline='') as f:
             reader = csv.reader(f)
             reader.__next__()
@@ -32,7 +32,7 @@ def check_points(file_name):
 
 def habits_list(file_name):
     try:
-        print(f"{Fore.green}Check habits for today {Style.reset}")
+        print(emoji.emojize(f"{Fore.green}Check habits for today :check_mark: {Style.reset}", language='alias'))
         with open(file_name, "r", newline='') as f:
             reader = csv.reader(f)
             reader.__next__()
@@ -42,6 +42,7 @@ def habits_list(file_name):
         print(f"{Fore.red}The habits list does not exist{Style.reset}")
 
 def remove_habit(file_name):
+    print(emoji.emojize(f"{Fore.green}Remove Habit :cross_mark:{Style.reset}", language='alias'))
     habit_name = input(f"{Fore.green}Enter which Habit you would like to remove: {Style.reset}")
     current_list = []
     with open(file_name, "r", newline='') as f:
