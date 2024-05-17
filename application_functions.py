@@ -1,8 +1,9 @@
 import csv
 from colored import Fore, Back, Style
+import emoji
 
 def add_good(file_name):
-    print("Add Good Habit")
+    print(emoji.emojize("Good Habit :beaming_face_with_smiling_eyes:", language='alias'))
     good_name = input(f"{Fore.blue}Enter a Good Habit: {Style.reset}")
     with open(file_name, "a", newline='') as f:
         writer = csv.writer(f)
@@ -10,7 +11,7 @@ def add_good(file_name):
 
 
 def add_bad(file_name):
-    print("Add Bad Habit")
+    print(emoji.emojize("Bad Habit :upside_down_face:", language='alias'))
     bad_name = input(f"{Fore.red}Enter a Bad Habit: {Style.reset}")
     with open(file_name, "a", newline='') as f:
         writer = csv.writer(f)
@@ -52,7 +53,7 @@ def remove_habit(file_name):
             else:
                 existing_habit = True
     if not existing_habit:
-        print(f"{Fore.red}Habit has not been added yet."{Style.reset})
+        print(f"{Fore.red}Habit has not been added yet.{Style.reset}")
     with open(file_name, "w", newline='') as f:
         writer = csv.writer(f)
         writer.writerows(current_list)

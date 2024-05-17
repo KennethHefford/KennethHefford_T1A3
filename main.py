@@ -1,9 +1,10 @@
 # System packages
 import os.path
+import fnmatch
 
 # External packages
 from colored import Fore, Back, Style
-
+import emoji
 
 # Imports of created functions
 
@@ -58,4 +59,4 @@ while choice != "6":
 
 
 
-print(f"{Fore.red}Thankyou for using the good habits tracker application!{Style.reset}")
+print(emoji.emojize(f"{Back.blue}Thankyou for using the good habits tracker application!:thumbsup: {Style.reset}", language='alias'))
