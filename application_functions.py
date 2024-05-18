@@ -1,25 +1,31 @@
+# System Packages
 import csv
+
+# External Packages
 from colored import Fore, Back, Style
 import emoji
 
+# Adding a Good Habit
+
 def add_good(file_name):
-    print(emoji.emojize("Good Habit :beaming_face_with_smiling_eyes:", language='alias'))
+    print(emoji.emojize("Good Habit is one point :beaming_face_with_smiling_eyes:", language='alias'))
     good_name = input(f"{Fore.blue}Enter a Good Habit: {Style.reset}")
     with open(file_name, "a", newline='') as f:
         writer = csv.writer(f)
         writer.writerow([good_name, 1])
 
-
+# Adding a Bad Habit
 def add_bad(file_name):
-    print(emoji.emojize("Bad Habit :upside_down_face:", language='alias'))
+    print(emoji.emojize("Bad Habit is minus one point :upside_down_face:", language='alias'))
     bad_name = input(f"{Fore.red}Enter a Bad Habit: {Style.reset}")
     with open(file_name, "a", newline='') as f:
         writer = csv.writer(f)
         writer.writerow([bad_name, -1])
 
+# Check Total Points with Error Handling
 def check_points(file_name):
     try:
-        print(emoji.emojize(f"{Fore.green}Check points total :smiling_face_with_open_hands:{Style.reset}", language='alias'))
+        print(emoji.emojize(f"{Fore.green}Check points total - aim for 10 :smiling_face_with_open_hands:{Style.reset}", language='alias'))
         with open(file_name, "r", newline='') as f:
             reader = csv.reader(f)
             reader.__next__()
@@ -29,7 +35,7 @@ def check_points(file_name):
     except FileNotFoundError:
         print(print(f"{Fore.red}The habits list does not exist{Style.reset}"))
     print(total_points)
-
+# Check Habits List with Error Handling
 def habits_list(file_name):
     try:
         print(emoji.emojize(f"{Fore.green}Check habits for today :check_mark: {Style.reset}", language='alias'))
@@ -41,6 +47,7 @@ def habits_list(file_name):
     except FileNotFoundError:
         print(f"{Fore.red}The habits list does not exist{Style.reset}")
 
+# Remove Habits List with Error Handling
 def remove_habit(file_name):
     print(emoji.emojize(f"{Fore.green}Remove Habit :cross_mark:{Style.reset}", language='alias'))
     habit_name = input(f"{Fore.green}Enter which Habit you would like to remove: {Style.reset}")

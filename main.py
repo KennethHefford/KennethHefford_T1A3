@@ -1,6 +1,5 @@
 # System packages
 import os.path
-import fnmatch
 
 # External packages
 from colored import Fore, Back, Style
@@ -11,6 +10,7 @@ import emoji
 from application_functions import add_good, add_bad, check_points, habits_list, remove_habit
 print(f"{Fore.blue}Welcome to the good habits tracker application!{Style.reset}")
 
+# Menu
 def create_menu():
 
     print("1. Enter 1 to add good habit to the list")
@@ -37,7 +37,7 @@ if (not os.path.isfile(file_name)):
 
 choice = ""
 
-
+# Function for menu choices
 while choice != "6":
     choice = create_menu()
 
@@ -58,5 +58,5 @@ while choice != "6":
 
 
 
-
+# Thank you message
 print(emoji.emojize(f"{Back.blue}Thankyou for using the good habits tracker application!:thumbsup: {Style.reset}", language='alias'))
