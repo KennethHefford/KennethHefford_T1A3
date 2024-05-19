@@ -30,7 +30,7 @@ if (not os.path.isfile(file_name)):
     print("Creating habits list file")
     # create the file
     habits_file = open(file_name, "w")
-    # we will enter the headings into the file
+    # enter the headings into the file
     habits_file.write("habit,count\n")
     # close the file
     habits_file.close()

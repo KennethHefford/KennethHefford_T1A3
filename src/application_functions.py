@@ -35,6 +35,8 @@ def check_points(file_name):
     except FileNotFoundError:
         print(print(f"{Fore.red}The habits list does not exist{Style.reset}"))
     print(total_points)
+
+    
 # Check Habits List with Error Handling
 def habits_list(file_name):
     try:
