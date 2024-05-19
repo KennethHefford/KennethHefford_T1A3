@@ -1,19 +1,21 @@
 # Kenneth Hefford Terminal Application T1A3 - Habits Tracker
 
-link to github repository: https://github.com/KennethHefford/KennethHefford_T1A3
+- Link to github repository: https://github.com/KennethHefford/KennethHefford_T1A3
 
-link to project management platform: https://trello.com/b/EtSEOeou/t1a3
+- Link to project management platform: https://trello.com/b/EtSEOeou/t1a3
+
+- This Application is for use in vscode.
 
 ### System Packages used:
-os.path
-import csv
+- os.path  
+- import csv
 
 ### External Packages used:
-colored
-emoji
+- colored
+- emoji
 
 ## Coding Styling Conventions
-The Styling Convention used to create this Terminal Application is PEP-8.
+The Python Styling Convention used to create this Terminal Application is PEP-8.
 
 ## Purpose of the Application
 The purpose of the application is to allow the end user to track their habits whether good or bad. It is designed to help users cultivate positive habits, stay accountable, and foster mindfulness. The application will have a menu list that will correspond which each feature such as adding a habit or closing the application. The user will enter a number (1-6) that coincides with a menu item to input or activate a feature.
@@ -72,6 +74,8 @@ Implement emoji & colored.
 
 - Add habits list file, if file does not exist program it to create the file. Name list.csv.
 
+- Import functions from application_functions.py.
+
 
 ### 3. Add Good Habits & Bad Habits function
 - Create another python file to named application_functions.py.  
@@ -106,84 +110,34 @@ Implement emoji & colored.
 - Implement emoji. 
 - Add colored.
 
+### Implementation Plan On Trello
 
+![Trello](./docs/trello%20board.png "Trello")  
+https://trello.com/b/EtSEOeou/t1a3
 
+## How to Install The Habits Tracker
 
+1. Open src folder on vscode or clone from git repository.
+2. Open wsl terminal via vscode.
+3. Enter chmod +x run.sh command in the terminal and press enter.
+4. Enter ./run.sh command in the terminal and press enter.
+5. Terminal Application is now ready to use. Please follow instructions on the screen.
 
 
+## System Requirements
+- System requirements:
+    - Python 3.7 and above
+    - Vscode
+    - colored & emoji Python Package to be installed via the bash script.
 
 
+Any bugs or issues please contact Kenneth Hefford on:  
+13221@coderacademy.edu.au
 
 
+## Resources
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Bibliography
-
-Python Styling
+Python Styling Convention
 - https://peps.python.org/pep-0008/
 
 Colored Python Package
@@ -191,3 +145,9 @@ Colored Python Package
 
 Emoji Python Package
 - https://pypi.org/project/emoji/
+
+Trello
+- https://trello.com/
+
+Vscode
+- https://code.visualstudio.com/
