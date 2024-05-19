@@ -10,6 +10,7 @@ import emoji
 def add_good(file_name):
     print(emoji.emojize("Good Habit is one point :beaming_face_with_smiling_eyes:", language='alias'))
     good_name = input(f"{Fore.blue}Enter a Good Habit: {Style.reset}")
+    # Write the habit
     with open(file_name, "a", newline='') as f:
         writer = csv.writer(f)
         writer.writerow([good_name, 1])
@@ -18,6 +19,7 @@ def add_good(file_name):
 def add_bad(file_name):
     print(emoji.emojize("Bad Habit is minus one point :upside_down_face:", language='alias'))
     bad_name = input(f"{Fore.red}Enter a Bad Habit: {Style.reset}")
+    # Write the habit
     with open(file_name, "a", newline='') as f:
         writer = csv.writer(f)
         writer.writerow([bad_name, -1])
@@ -26,6 +28,7 @@ def add_bad(file_name):
 def check_points(file_name):
     try:
         print(emoji.emojize(f"{Fore.green}Check points total - aim for 10 :smiling_face_with_open_hands:{Style.reset}", language='alias'))
+        # Read the habit list and add the last column containing the count
         with open(file_name, "r", newline='') as f:
             reader = csv.reader(f)
             reader.__next__()
@@ -41,6 +44,7 @@ def check_points(file_name):
 def habits_list(file_name):
     try:
         print(emoji.emojize(f"{Fore.green}Check habits for today :check_mark: {Style.reset}", language='alias'))
+        # Read habits list but only first column.
         with open(file_name, "r", newline='') as f:
             reader = csv.reader(f)
             reader.__next__()
@@ -54,6 +58,7 @@ def remove_habit(file_name):
     print(emoji.emojize(f"{Fore.green}Remove Habit :cross_mark:{Style.reset}", language='alias'))
     habit_name = input(f"{Fore.green}Enter which Habit you would like to remove: {Style.reset}")
     current_list = []
+    # Check for habit and create new list without that habit.
     with open(file_name, "r", newline='') as f:
         reader = csv.reader(f)
         existing_habit = False
@@ -62,6 +67,7 @@ def remove_habit(file_name):
                 current_list.append(row)
             else:
                 existing_habit = True
+     # If habit does not exist.           
     if not existing_habit:
         print(f"{Fore.red}Habit has not been added yet.{Style.reset}")
     with open(file_name, "w", newline='') as f:
